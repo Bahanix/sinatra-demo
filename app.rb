@@ -4,12 +4,7 @@ get '/' do
   slim :index
 end
 
-get '/max/:nombres' do |nombres|
-  @solution = nombres.split(",").map{|v| v.to_i }.max
-  slim :max
-end
-
-get '/hello/:name' do |name|
-  @name = name
+get '/hello/:name' do
+  @name = params[:name]
   slim :hello
 end
